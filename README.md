@@ -1,6 +1,7 @@
 # 开发需知
 
 > 此项目是一套基于vue3、js、vite4的项目模板，封装了axios，vue-router，scss，配置了vite.config.js。
+
 > 功能有：
 > 1.vue3方法的自动引入。2.请求接口地址快速配置.env.dev。3.Prettier代码格式化ctrl+s保存自动格式化代码。4.eslint校验。5.网页标题快速设置
 > 可以快速搭建项目进行开发
@@ -19,8 +20,11 @@ index.html的meta标签,复制替换：
 
 ### 一、网页标题
 
-> 如果网页固定一个标题的话，请删掉router文件夹里的document.title = to.meta.title;并且删掉routes里的meta.title属性
-> 如果网页随路由跳转更改标题的话，请卸载pnpm uninstall vite-plugin-html插件，再将vite.config.js的createHtmlPlugin删掉
+#### 1.如果网页固定一个标题的话，请删掉router文件index.js里的document.title = to.meta.title;并且删掉routes里的meta.title属性
+
+#### 2.如果网页随路由跳转更改标题的话，请卸载pnpm uninstall vite-plugin-html插件，再将vite.config.js的createHtmlPlugin删掉
+
+#### 嫌麻烦的也可以不删document.title = to.meta.title会覆盖vite.config.js配置的网页标题
 
 ### 二、请求地址
 
