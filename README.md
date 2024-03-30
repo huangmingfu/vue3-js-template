@@ -1,6 +1,6 @@
 # 开发需知
 
-> 此项目是一套基于vue3、js、vite4的项目模板，封装了axios，vue-router，scss，配置了vite.config.js。
+> 此项目是一套基于vue3、js、vite5的项目模板，封装了axios，vue-router，scss，配置了vite.config.js。
 
 > 功能有：
 > 1.vue3方法的自动引入。2.请求接口地址快速配置.env.dev。3.Prettier代码格式化ctrl+s保存自动格式化代码。4.eslint校验。5.网页标题快速设置
@@ -12,10 +12,7 @@ pnpm i
 //运行
 pnpm run dev
 
-//移动端需要配置：
-index.html的meta标签,复制替换：
-<meta name="viewport" content="width=device-width, viewport-fit=cover, initial-scale=1.0, user-scalable=no"/>
-//加入了user-scalable=no禁止缩放，以防@click事件点击延迟
+deploy 自动部署到gitee pages命令，需要在.gitignore将dist注释
 ```
 
 ### 一、网页标题
@@ -134,3 +131,42 @@ function logout() {
   window.sessionStorage.clear();
 }
 ```
+
+# 移动端
+
+```
+//在index.html配置：
+meta标签,复制替换：
+//加入了user-scalable=no禁止缩放，以防@click事件点击延迟
+<meta name="viewport" content="width=device-width, viewport-fit=cover, initial-scale=1.0, user-scalable=no"/>
+
+```
+
+< 设计稿750px
+
+pnpm install amfe-flexible // CSS单位自适应转换插件 负责更改根font-size，不用加index.html代码了？
+pnpm install postcss-pxtorem //负责将px转成rem
+
+在项目根目录main.ts中引入amfe-flexible
+import "amfe-flexible"
+
+在vite.config.js配置:
+import postCssPxToRem from 'postcss-pxtorem';
+
+    base: env.VITE_BASE_PATH,
+    css: {
+      postcss: {
+        plugins: [
+          postCssPxToRem({
+            //自适应，px>rem转换
+            rootValue: 75, //75表示750设计稿，37.5表示375设计稿
+            propList: ['*'], //要转换的属性，这里选择全部都进行
+          }),
+        ],
+      },
+    },
+    
+在index.html加上：
+<script>
+  function resize() { const e = document.documentElement, i = e.clientWidth; window.viewRate = i / 750, e.style.fontSize = 75 * window.viewRate + "px" } window.onresize = resize, resize()
+</script>

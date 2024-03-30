@@ -1,19 +1,20 @@
 {
-  "name": "vue3-js-demo",
+  "name": "vue3-js-template",
   "private": true,
-  "version": "1.0.0",
-  "description": "一套基于vue3、js、vite4的项目模板，封装了axios，vue-router，scss，配置了vite.config.js。",
+  "version": "2.0.0",
+  "description": "一套基于vue3、js、vite5的项目模板，封装了axios，vue-router，scss，配置了vite.config.js。",
   "type": "module",
   "scripts": {
     "dev": "vite --mode dev",
     "build:pro": "vite build --mode pro",
     "build:test": "vite build --mode test",
     "build:dev": "vite build --mode dev",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "pnpm run build:pro && git add . && git commit -m \"gitee自动部署\" && git push -u origin master && git subtree push --prefix dist-pro origin gh-pages"
   },
   "dependencies": {
-    "vue": "^3.3.4",
-    "vue-router": "^4.2.5"
+    "vue": "^3.4.21",
+    "vue-router": "^4.3.0"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.2.3",
@@ -24,7 +25,7 @@
     "prettier": "3.0.3",
     "sass": "^1.69.0",
     "unplugin-auto-import": "^0.16.6",
-    "vite": "^4.4.5",
+    "vite": "^5.2.7",
     "vite-plugin-html": "^3.2.0"
   }
 }

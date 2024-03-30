@@ -1,10 +1,5 @@
 import axios from 'axios';
 
-let cancel,
-  promiseArr = {};
-
-const CancelToken = axios.CancelToken;
-
 // 创建axios实例
 const service = axios.create({
   baseURL: import.meta.env.VITE_APP_BASE_API, // 请求的默认前缀 只要是发出去请求就会 默认带上这个前缀
@@ -15,14 +10,6 @@ const service = axios.create({
 // 请求拦截器
 service.interceptors.request.use(
   (config) => {
-    //发起请求时，取消掉当前正在进行的相同请求
-    if (promiseArr[config.url]) {
-      promiseArr[config.url]('操作取消');
-      promiseArr[config.url] = cancel;
-    } else {
-      promiseArr[config.url] = cancel;
-    }
-
     // 在请求里加入token认证信息
     // const token = getToken()//localStorage.getItem('token')获取的
     // if (token) {
