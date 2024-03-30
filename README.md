@@ -145,7 +145,7 @@ meta标签,复制替换：
 
 ```
 
-< 设计稿750px
+> 设计稿750px
 
 pnpm install amfe-flexible // CSS单位自适应转换插件 负责更改根font-size，不用加index.html代码了？
 pnpm install postcss-pxtorem //负责将px转成rem
