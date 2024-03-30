@@ -2,7 +2,8 @@ node_modules
 *.md
 .vscode
 .idea
-dist
+/dist/
+/dist*
 public
-*.js
-*.cjs
+# *.js
+# *.cjs

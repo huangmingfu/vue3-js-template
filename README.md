@@ -13,6 +13,9 @@ pnpm i
 pnpm run dev
 
 deploy 自动部署到gitee pages命令，需要在.gitignore将dist注释
+
+升级版本：
+pnpm add vue@latest
 ```
 
 ### 一、网页标题
@@ -165,8 +168,9 @@ import postCssPxToRem from 'postcss-pxtorem';
         ],
       },
     },
-    
+
 在index.html加上：
+
 <script>
   function resize() { const e = document.documentElement, i = e.clientWidth; window.viewRate = i / 750, e.style.fontSize = 75 * window.viewRate + "px" } window.onresize = resize, resize()
 </script>
