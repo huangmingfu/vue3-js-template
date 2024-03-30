@@ -14,6 +14,9 @@ export default defineConfig(({ mode }) => {
       // 解决 `import { ref , reactive ..... } from 'vue'` 大量引入的问题
       AutoImport({
         imports: ['vue', 'vue-router'], //自动引入
+        eslintrc: {
+          enabled: false, // 1、改为true用于生成eslint配置。2、生成后改回false，避免重复生成消耗
+        },
       }),
       //替换网站标题
       createHtmlPlugin({
