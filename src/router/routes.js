@@ -14,7 +14,6 @@ export default [
     component: () => import('@/views/Home/index.vue'),
   },
   {
-    // path: '/404',
     path: '/:pathMatch(.*)*', // 防止浏览器刷新时路由未找到警告提示:No match found for location with path "/xxx"
     meta: {
       title: '404',
