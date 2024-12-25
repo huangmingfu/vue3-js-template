@@ -1,9 +1,8 @@
 import service from '@/utils/service';
 
-// xxx
 export function getHome(params) {
   return service({
-    method: 'POST',
+    method: 'get',
     url: 'get/home',
     params,
   })
