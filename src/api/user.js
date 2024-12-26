@@ -1,4 +1,4 @@
-import service from '@/utils/service';
+import service from '@/utils/service'
 
 export function getHome(params) {
   return service({
@@ -6,6 +6,6 @@ export function getHome(params) {
     url: 'get/home',
     params,
   })
-    .then((res) => res.data)
-    .catch((e) => e);
+    .then(res => res.data)
+    .catch(e => e)
 }

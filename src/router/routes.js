@@ -1,6 +1,6 @@
 export default [
   {
-    //重定向
+    // 重定向
     path: '/',
     redirect: '/home',
   },
@@ -9,7 +9,7 @@ export default [
     name: 'Home',
     meta: {
       title: '首页',
-      keepAlive: true, //是否缓存路由
+      keepAlive: true, // 是否缓存路由
     },
     component: () => import('@/views/Home/index.vue'),
   },
@@ -20,4 +20,4 @@ export default [
     },
     component: () => import('@/components/Error/404.vue'),
   },
-];
+]

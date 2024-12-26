@@ -1,9 +1,0 @@
-node_modules
-*.md
-.vscode
-.idea
-/dist/
-/dist*
-public
-# *.js
-# *.cjs

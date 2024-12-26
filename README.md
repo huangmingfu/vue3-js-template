@@ -109,12 +109,12 @@ auto: true, // 启用所有 Store 默认持久化
 #### tips: pinia持久化的无法通过 `window.localStorage.clear();` 一键清空数据
 
 ```js
-window.localStorage.setItem('user2', 'hello');
+window.localStorage.setItem('user2', 'hello')
 // window.localStorage.removeItem('user2');
 
 // tips: pinia持久化的无法通过这种方式清空数据，只能删除同样方式存储的值 eg: window.localStorage.setItem('user2', 'hello');
-window.localStorage.clear();
-window.sessionStorage.clear();
+window.localStorage.clear()
+window.sessionStorage.clear()
 ```
 
 #### $reset() 清空数据
