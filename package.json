@@ -12,8 +12,6 @@
     "preview": "vite preview",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "deps:check": "pnpm outdated -r",
-    "deps:update": "pnpm update --latest",
     "clean": "rm -rf node_modules dist dist-*"
   },
   "dependencies": {
